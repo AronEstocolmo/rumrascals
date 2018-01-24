@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Review from '../Review/Review';
 
 //const ALL_REVIEWS_PATH = "10.17.14.18:8080/review";
-//{this.state.reviews.map(review => <Review key={review.id} review={review} />)}
+//
 
 
 class ReviewList extends Component {
@@ -18,7 +18,7 @@ class ReviewList extends Component {
       console.log("reviews:");
       console.log(reviews);
       this.setState({
-        reviews: reviews.response,
+        reviews: reviews,
       });
     } catch (e) {
       console.log(e);
@@ -27,12 +27,14 @@ class ReviewList extends Component {
 
   
   render() {
+    console.log("reviews2:");
     console.log(this.state.reviews)
     return (
-      
+      <div>
       <ReviewListStyle>
-        
+        {this.state.reviews.map(review => <Review key={review.id} review={review} />)}
       </ReviewListStyle>
+      </div>
     );
   }
 }

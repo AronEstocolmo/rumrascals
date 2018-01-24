@@ -3,15 +3,18 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Overdrive from 'react-overdrive';
 import PropTypes from 'prop-types';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
 
 const Review = ({ review }) => (
+  <Router>
   <Link to={`/${review.id}`}>
-    <Overdrive id={review.id}>
+  Rum of the day:
+    <h1>{review.title}</h1>
       <Poster src={`${POSTER_PATH}${review.poster_path}`} alt={review.title} />
-    </Overdrive>
-  </Link>
+  </Link>  
+  </Router>
 );
 
 export default Review;
