@@ -1,32 +1,30 @@
-import React, { Component } from 'react';
-import logo from './logo.png';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Link,
+} from 'react-router-dom';
 import './App.css';
+import RumRaskals from './img/RumRaskals.png';
 import ReviewList from './ReviewList/ReviewList';
-import Menu from './Menu';
-import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
-import Review from './Review/Review';
+import ReviewPage from './Review/ReviewPage';
 
 const App = () => (
-      <Router>
-      <div className="App">
-        <header className="App-header">
-          <Menu/>
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
+  <Router>
+    <div className="App">
+      <header className="App-header">
+        <Link to="/">
+          <img src={RumRaskals} className="App-logo" alt="logo" />
+        </Link>
+      </header>
 
-        <Switch>
-          <Route exact path="/" component={ReviewList}/>
-          <Route exact path="/:id" component={Review}/>
-
-        </Switch>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        
-        <ReviewList/>
-      </div>
-      </Router>    
+      <Switch>
+        <Route exact path="/" component={ReviewList}/>
+        <Route path="/:id" component={ReviewPage}/>
+      </Switch>
+    </div>
+  </Router>    
 );
 
 export default App;
