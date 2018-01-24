@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+import Review from '../Review/Review';
 
 const ALL_REVIEWS_PATH = "https://supercoolapi.sweet/reviews";
 
-class ReviewList extends PureComponent {
+class ReviewList extends Component {
   state = {
     reviews: [],
   }
@@ -21,16 +23,16 @@ class ReviewList extends PureComponent {
 
   render() {
     return (
-      <ReviewList>
+      <ReviewListStyle>
         {this.state.reviews.map(review => <Review key={review.id} review={review} />)}
-      </ReviewList>
+      </ReviewListStyle>
     );
   }
 }
 
 export default ReviewList;
 
-const ReviewList = styled.div`
+const ReviewListStyle = styled.div`
   display: list;
   padding: 1rem;
   grid-template-columns: repeat(6, 1fr);

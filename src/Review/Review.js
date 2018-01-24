@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Overdrive from 'react-overdrive';
+import PropTypes from 'prop-types';
 
 const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
 
