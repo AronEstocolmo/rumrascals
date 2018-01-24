@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
-import './App.css';
 
 class Review extends Component {
   render() {
     return (
-      <div className="App">
-       
-        <p className="review">
-          This is a review
+      <div className="review">
+       <h1>Awesome Rum!</h1>
+        <p className="reviewText">
+          This is a wonderful review of a wonderful rum.
         </p>
+        
+
       </div>
     );
   }
 }
 
-export default App;
+export default Review;
