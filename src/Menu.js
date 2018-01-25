@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.png';
 import './App.css';
 import ReviewList from './ReviewList/ReviewList';
 
