@@ -4,13 +4,12 @@ import styled from 'styled-components';
 import Overdrive from 'react-overdrive';
 import { Poster } from './Review';
 /*
-<Overdrive id={this.props.match.params.id}>
-  <Poster src={`${review.rum.imageLink}`} alt={review.title} />
-</Overdrive>*/
+*/
 
 class ReviewPage extends Component {
   state = {
-    review: [],
+    review: [
+    ],
   }
 
   async componentWillMount() {
@@ -34,16 +33,18 @@ class ReviewPage extends Component {
     return (
       <ReviewWrapper backdrop={`${review.banner}`}>
         <ReviewInfo>
-          
+          <Overdrive id={this.props.match.params.id}>
+            <Poster src={`${review.rumImage}`} alt={review.title} />
+          </Overdrive>
           <div>
-            {this.state.review.title ? (
-              <h1>hello</h1>
+            {this.state.review.rumName ? (
+              <h1>{review.rumName}</h1>
             ) : (
               <h1>hi</h1>
             )
             }
-            <h1>{review.title}</h1>
-            <h3>{review.rating}</h3>
+            <h1>{review.rumPrice} kr</h1>
+            <h3>{review.rating} / 5</h3>
             <p>{review.reviewText}</p>
           </div>
         </ReviewInfo>
