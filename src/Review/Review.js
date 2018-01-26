@@ -7,7 +7,7 @@ import Overdrive from 'react-overdrive';
 const Review = ({ review }) => (
   <Link to={`/${review.id}`}>
     <Overdrive id={review.id.toString()}>
-      <Poster src={`${review.rum.imageLink}`} alt={review.title} />
+    <Poster src={`${review.rum.imageLink}`} alt={review.title} />
     </Overdrive>
   </Link> 
 );
